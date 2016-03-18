@@ -280,3 +280,24 @@ textarea {
         page-break-after: avoid;
     }
 }
+
+.body-bg { 
+    position: relative; 
+    overflow: hidden; 
+    width: 100%; 
+    height: 100vh; 
+}
+
+.body-bg img {
+    /* These properties make sure that the "background image" covers all available space. */
+    position: absolute; 
+    top: 0; 
+    right: 0; 
+    bottom: 0; 
+    min-width: 100%; 
+    min-height: 100%; /* This bit centers the image. */ 
+    left: 50%; 
+    transform: translateX(-50%);
+    /* Here, we make sure that nothing sticks out on the side that shouldn't. */
+    overflow-x: hidden; 
+}
