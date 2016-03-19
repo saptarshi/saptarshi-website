@@ -1,0 +1,67 @@
+@charset 'UTF-8';
+@import "susy";
+
+$susy: (
+  columns: 12,
+  gutters: 1/4,
+  math: fluid,
+  output: float,
+);
+
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: $bottom-nav-height;
+  background-color: $dark-grey;
+  will-change: transform;
+  transition: transform 200ms linear;
+
+  @extend .z-depth-2;
+  @include container;
+
+  &.headroom--pinned {
+    transform: translateY(0%);
+  }
+
+  &.headroom--unpinned {
+    transform: translateY(100%);
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    list-style: none;
+    @include span(3);
+
+    &:last-child {
+      @include span(3 last);
+    }
+    a {
+      @include clearfix;
+      width: 100%;
+      padding-top: 6px;
+      padding-bottom: 10px;
+      display: inline-block;
+      color: $light-inactive-grey;
+
+      &.active {
+        color: $light-active-grey;
+      }
+    }
+    i {
+      @include span(1 of 3);
+      margin-left: span(1 of 3) + gutter(3);
+      text-align: center;
+    }
+    .label {
+      font-size: $small-text-size;
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+    }
+  }
+}

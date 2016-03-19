@@ -14,7 +14,8 @@ $text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvet
 /// @type List
 $code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
 
-
+$base-text-size: 16px;
+$small-text-size: 14px;
 
 
 
@@ -38,6 +39,8 @@ $mid-grey: rgb(153, 153, 153) !default;
 /// @type Color
 $dark-grey: rgb(68, 68, 68) !default;
 
+$light-inactive-grey: rgba(255, 255, 255, 0.7);
+$light-active-grey: rgba(255, 255, 255, 1);
 
 
 
@@ -62,7 +65,7 @@ $breakpoints: (
 
 
 
-
+$bottom-nav-height: 56px;
 
 
 /// Relative or absolute URL where all assets are served from
