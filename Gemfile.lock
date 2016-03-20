@@ -32,6 +32,8 @@ GEM
       sass (>= 3.2, < 3.5)
     ffi (1.9.10-x86-mingw32)
     i18n (0.7.0)
+    modular-scale (2.1.1)
+      compass (>= 0.12.0)
     multi_json (1.11.2)
     normalize (0.0.3)
       activerecord (~> 3.0)
@@ -51,6 +53,7 @@ PLATFORMS
 DEPENDENCIES
   breakpoint (= 2.7.0)
   compass (= 1.0.3)
+  modular-scale (= 2.1.1)
   normalize (= 0.0.3)
   sass (= 3.4.21)
   susy (= 2.2.12)

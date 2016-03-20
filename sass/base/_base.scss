@@ -9,6 +9,10 @@ html {
   box-sizing: border-box;
 }
 
+body {
+  padding: 50px;
+}
+
 /**
  * Make all elements from the DOM inherit from the parent box-sizing
  * Since `*` has a specificity of 0, it does not override the `html` value
@@ -54,4 +58,10 @@ a {
 }
 .z-depth-6 {
   box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0 rgba(0, 0, 0, 0.22);
+}
+
+ul, ol, dd, dt {
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }

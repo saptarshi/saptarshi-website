@@ -67,7 +67,9 @@ $breakpoints: (
 
 $bottom-nav-height: 56px;
 
-
+// Modular scale variables
+$ms-base: 1em;
+$ms-ratio: 1.5;
 /// Relative or absolute URL where all assets are served from
 /// @type String
 /// @example scss - When using a CDN

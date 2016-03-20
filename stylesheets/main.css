@@ -441,13 +441,18 @@ html {
   box-sizing: border-box;
 }
 
+/* line 12, ../sass/base/_base.scss */
+body {
+  padding: 50px;
+}
+
 /**
  * Make all elements from the DOM inherit from the parent box-sizing
  * Since `*` has a specificity of 0, it does not override the `html` value
  * making all elements inheriting from the root box-sizing value
  * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
  */
-/* line 18, ../sass/base/_base.scss */
+/* line 22, ../sass/base/_base.scss */
 *, *::before, *::after {
   box-sizing: inherit;
 }
@@ -455,7 +460,7 @@ html {
 /**
  * Basic styles for links
  */
-/* line 25, ../sass/base/_base.scss */
+/* line 29, ../sass/base/_base.scss */
 a {
   color: #e50050;
   text-decoration: none;
@@ -466,39 +471,46 @@ a:hover, a:active, a:focus {
   text-decoration: underline;
 }
 
-/* line 37, ../sass/base/_base.scss */
+/* line 41, ../sass/base/_base.scss */
 .z-depth-0 {
   box-shadow: none !important;
 }
 
-/* line 40, ../sass/base/_base.scss */
+/* line 44, ../sass/base/_base.scss */
 .z-depth-1 {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
-/* line 43, ../sass/base/_base.scss */
+/* line 47, ../sass/base/_base.scss */
 .z-depth-2, .bottom-nav {
   box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-/* line 46, ../sass/base/_base.scss */
+/* line 50, ../sass/base/_base.scss */
 .z-depth-3 {
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-/* line 49, ../sass/base/_base.scss */
+/* line 53, ../sass/base/_base.scss */
 .z-depth-4 {
   box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
-/* line 52, ../sass/base/_base.scss */
+/* line 56, ../sass/base/_base.scss */
 .z-depth-5 {
   box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21);
 }
 
-/* line 55, ../sass/base/_base.scss */
+/* line 59, ../sass/base/_base.scss */
 .z-depth-6 {
   box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0 rgba(0, 0, 0, 0.22);
+}
+
+/* line 63, ../sass/base/_base.scss */
+ul, ol, dd, dt {
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
 /* line 4, ../sass/base/_fonts.scss */
@@ -509,9 +521,51 @@ html {
 /**
  * Basic typography style for copy text
  */
-/* line 4, ../sass/base/_typography.scss */
-body {
+/* line 6, ../sass/base/_typography.scss */
+html, body {
   color: #222222;
+  font-family: 'Lora', serif;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+/* line 13, ../sass/base/_typography.scss */
+h1 {
+  font-size: 3.375em;
+  text-align: center;
+  margin: 0.44444em 0 0.66667em 0;
+  line-height: 1.4;
+}
+
+/* line 20, ../sass/base/_typography.scss */
+h2 {
+  font-size: 1.22474em;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0 0 1em 0;
+}
+
+/* line 27, ../sass/base/_typography.scss */
+h3 {
+  font-size: 1.5em;
+  text-align: center;
+  margin: 1.5em 0 1em 0;
+  font-style: italic;
+}
+
+/* line 34, ../sass/base/_typography.scss */
+h4 {
+  font-size: 1.22474em;
+  text-align: justify;
+  font-weight: 400;
+  line-height: 1.4;
+  margin: 0 0 1em 0;
+}
+
+/* line 42, ../sass/base/_typography.scss */
+p {
+  text-align: justify;
+  margin-top: 0;
 }
 
 /**
@@ -581,6 +635,7 @@ body {
 .bottom-nav {
   position: fixed;
   bottom: 0;
+  left: 0;
   width: 100%;
   height: 56px;
   background-color: #444444;
@@ -596,33 +651,33 @@ body {
   display: block;
   clear: both;
 }
-/* line 24, ../sass/layout/_navigation.scss */
+/* line 25, ../sass/layout/_navigation.scss */
 .bottom-nav.headroom--pinned {
   transform: translateY(0%);
 }
-/* line 28, ../sass/layout/_navigation.scss */
+/* line 29, ../sass/layout/_navigation.scss */
 .bottom-nav.headroom--unpinned {
   transform: translateY(100%);
 }
-/* line 32, ../sass/layout/_navigation.scss */
+/* line 33, ../sass/layout/_navigation.scss */
 .bottom-nav ul {
   padding: 0;
   margin: 0;
 }
-/* line 36, ../sass/layout/_navigation.scss */
+/* line 37, ../sass/layout/_navigation.scss */
 .bottom-nav li {
   list-style: none;
   width: 23.72881%;
   float: left;
   margin-right: 1.69492%;
 }
-/* line 40, ../sass/layout/_navigation.scss */
+/* line 41, ../sass/layout/_navigation.scss */
 .bottom-nav li:last-child {
   width: 23.72881%;
   float: right;
   margin-right: 0;
 }
-/* line 43, ../sass/layout/_navigation.scss */
+/* line 44, ../sass/layout/_navigation.scss */
 .bottom-nav li a {
   width: 100%;
   padding-top: 6px;
@@ -636,11 +691,11 @@ body {
   display: table;
   clear: both;
 }
-/* line 51, ../sass/layout/_navigation.scss */
+/* line 52, ../sass/layout/_navigation.scss */
 .bottom-nav li a.active {
   color: white;
 }
-/* line 55, ../sass/layout/_navigation.scss */
+/* line 56, ../sass/layout/_navigation.scss */
 .bottom-nav li i {
   width: 28.57143%;
   float: left;
@@ -648,10 +703,86 @@ body {
   margin-left: 35.71429%;
   text-align: center;
 }
-/* line 60, ../sass/layout/_navigation.scss */
+/* line 61, ../sass/layout/_navigation.scss */
 .bottom-nav li .label {
   font-size: 14px;
   display: inline-block;
   width: 100%;
   text-align: center;
+}
+
+/* line 9, ../sass/pages/_resume.scss */
+.profile-img {
+  width: 49.15254%;
+  height: 49.15254%;
+  margin-left: 25.42373%;
+  border-radius: 50%;
+}
+
+/* line 17, ../sass/pages/_resume.scss */
+.skills h4 {
+  font-weight: 700;
+}
+
+/* line 22, ../sass/pages/_resume.scss */
+.technologies {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+  -webkit-column-width: 40.67797%;
+  -moz-column-width: 40.67797%;
+  column-width: 40.67797%;
+  -webkit-column-rule: 1px dotted #ddd;
+  -moz-column-rule: 1px dotted #ddd;
+  column-rule: 1px dotted #ddd;
+  column-gap: 15.25424%;
+}
+
+/* line 36, ../sass/pages/_resume.scss */
+.organizations .org-name {
+  width: 74.57627%;
+  float: left;
+  margin-right: 1.69492%;
+  font-size: 1em;
+  font-weight: 700;
+  font-style: normal;
+  text-transform: uppercase;
+}
+/* line 40, ../sass/pages/_resume.scss */
+.organizations .org-year {
+  width: 23.72881%;
+  float: right;
+  margin-right: 0;
+  text-align: right;
+}
+/* line 44, ../sass/pages/_resume.scss */
+.organizations .org-wrapper {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2.25em;
+}
+/* line 12, C:/Ruby22/lib/ruby/gems/2.2.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
+.organizations .org-wrapper:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+/* line 49, ../sass/pages/_resume.scss */
+.organizations .org-client {
+  font-size: 1em;
+  font-weight: 700;
+  font-style: italic;
+  text-transform: initial;
+}
+/* line 54, ../sass/pages/_resume.scss */
+.organizations .roles li > dl > dt,
+.organizations .roles li > dl > dd {
+  text-align: center;
+}
+/* line 59, ../sass/pages/_resume.scss */
+.organizations .roles .role-wrapper {
+  background-color: #ededed;
+  overflow: hidden;
+  padding: 1em;
 }

@@ -39,3 +39,9 @@
     clear: both;
   }
 }
+
+@mixin grey-background {
+  background-color: $light-grey;
+  overflow: hidden;
+  padding: 1em;
+}
