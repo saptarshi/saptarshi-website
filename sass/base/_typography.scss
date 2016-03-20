@@ -39,6 +39,13 @@ h4 {
   margin: 0 0 ms(0) 0;
 }
 
+h6 {
+  font-size: ms(0.5);
+  font-weight: 400;
+  text-align: center;
+  margin: 0 0 ms(0) 0;
+}
+
 p {
   text-align: justify;
   margin-top: 0;
@@ -46,6 +53,13 @@ p {
 
 @mixin text-size-1 ($font-style, $text-transform:initial, $font-weight:normal) {
   font-size: ms(0);
+  font-weight: $font-weight;
+  font-style: $font-style;
+  text-transform: $text-transform;
+}
+
+@mixin text-size-2 ($font-style, $text-transform:initial, $font-weight:normal) {
+  font-size: ms(1);
   font-weight: $font-weight;
   font-style: $font-style;
   text-transform: $text-transform;

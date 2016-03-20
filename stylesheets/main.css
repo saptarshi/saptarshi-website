@@ -482,7 +482,7 @@ a:hover, a:active, a:focus {
 }
 
 /* line 47, ../sass/base/_base.scss */
-.z-depth-2, .bottom-nav {
+.z-depth-2, .bottom-nav, .floating-header.appear {
   box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
@@ -511,6 +511,12 @@ ul, ol, dd, dt {
   padding: 0;
   margin: 0;
   list-style: none;
+}
+
+/* line 69, ../sass/base/_base.scss */
+.hidden {
+  display: none;
+  visibility: hidden;
 }
 
 /* line 4, ../sass/base/_fonts.scss */
@@ -563,6 +569,14 @@ h4 {
 }
 
 /* line 42, ../sass/base/_typography.scss */
+h6 {
+  font-size: 1.22474em;
+  font-weight: 400;
+  text-align: center;
+  margin: 0 0 1em 0;
+}
+
+/* line 49, ../sass/base/_typography.scss */
 p {
   text-align: justify;
   margin-top: 0;
@@ -679,13 +693,14 @@ p {
 }
 /* line 44, ../sass/layout/_navigation.scss */
 .bottom-nav li a {
+  clear: both;
   width: 100%;
   padding-top: 6px;
   padding-bottom: 10px;
   display: inline-block;
   color: rgba(255, 255, 255, 0.7);
 }
-/* line 36, ../sass/abstracts/_mixins.scss */
+/* line 37, ../sass/abstracts/_mixins.scss */
 .bottom-nav li a:after {
   content: "";
   display: table;
@@ -738,8 +753,30 @@ p {
   column-gap: 15.25424%;
 }
 
-/* line 36, ../sass/pages/_resume.scss */
-.organizations .org-name {
+/* line 35, ../sass/pages/_resume.scss */
+.floating-header {
+  position: fixed;
+  height: 56px;
+  top: 0;
+  left: 0;
+  background: #3A3A3A;
+  color: #fff;
+  width: 100%;
+  padding: 0 50px;
+  opacity: 0;
+  will-change: transform;
+  transition: opacity 200ms ease-in-out;
+  -moz-transition: opacity 200ms ease-in-out;
+  -webkit-transition: opacity 200ms ease-in-out;
+}
+/* line 50, ../sass/pages/_resume.scss */
+.floating-header.appear {
+  opacity: 0.95;
+}
+
+/* line 58, ../sass/pages/_resume.scss */
+.organizations .org-name,
+header .org-name {
   width: 74.57627%;
   float: left;
   margin-right: 1.69492%;
@@ -748,41 +785,107 @@ p {
   font-style: normal;
   text-transform: uppercase;
 }
-/* line 40, ../sass/pages/_resume.scss */
-.organizations .org-year {
+/* line 62, ../sass/pages/_resume.scss */
+.organizations .org-year,
+header .org-year {
   width: 23.72881%;
   float: right;
   margin-right: 0;
   text-align: right;
 }
-/* line 44, ../sass/pages/_resume.scss */
-.organizations .org-wrapper {
+/* line 66, ../sass/pages/_resume.scss */
+.organizations .org-wrapper,
+header .org-wrapper {
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 2.25em;
 }
 /* line 12, C:/Ruby22/lib/ruby/gems/2.2.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
-.organizations .org-wrapper:after {
+.organizations .org-wrapper:after,
+header .org-wrapper:after {
   content: " ";
   display: block;
   clear: both;
 }
-/* line 49, ../sass/pages/_resume.scss */
-.organizations .org-client {
+/* line 70, ../sass/pages/_resume.scss */
+.organizations .org-wrapper.fixed-top,
+header .org-wrapper.fixed-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+/* line 77, ../sass/pages/_resume.scss */
+.organizations .org-client,
+header .org-client {
   font-size: 1em;
   font-weight: 700;
   font-style: italic;
   text-transform: initial;
 }
-/* line 54, ../sass/pages/_resume.scss */
+/* line 82, ../sass/pages/_resume.scss */
 .organizations .roles li > dl > dt,
-.organizations .roles li > dl > dd {
+.organizations .roles li > dl > dd,
+header .roles li > dl > dt,
+header .roles li > dl > dd {
   text-align: center;
 }
-/* line 59, ../sass/pages/_resume.scss */
-.organizations .roles .role-wrapper {
+/* line 87, ../sass/pages/_resume.scss */
+.organizations .roles .role-wrapper,
+header .roles .role-wrapper {
   background-color: #ededed;
   overflow: hidden;
   padding: 1em;
+}
+
+/* line 94, ../sass/pages/_resume.scss */
+.education dl {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 6.77966% 0;
+}
+/* line 12, C:/Ruby22/lib/ruby/gems/2.2.0/gems/susy-2.2.12/sass/susy/output/support/_clearfix.scss */
+.education dl:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+/* line 98, ../sass/pages/_resume.scss */
+.education .institute {
+  width: 74.57627%;
+  float: left;
+  margin-right: 1.69492%;
+  font-size: 1em;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: initial;
+}
+/* line 102, ../sass/pages/_resume.scss */
+.education .year {
+  text-align: right;
+  width: 23.72881%;
+  float: right;
+  margin-right: 0;
+}
+/* line 106, ../sass/pages/_resume.scss */
+.education .degree {
+  font-size: 1em;
+  font-weight: 700;
+  font-style: normal;
+  text-transform: initial;
+  clear: both;
+}
+/* line 37, ../sass/abstracts/_mixins.scss */
+.education .degree:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 110, ../sass/pages/_resume.scss */
+.education .marks {
+  font-size: 1.5em;
+  font-weight: 400;
+  font-style: italic;
+  text-transform: initial;
 }
