@@ -26,6 +26,7 @@ $text-color: rgb(34, 34, 34) !default;
 /// Main brand color
 /// @type Color
 $brand-color: rgb(229, 0, 80) !default;
+$secondary-color: #F44336 !default;
 
 /// Light grey
 /// @type Color
@@ -42,6 +43,11 @@ $dark-grey: rgb(68, 68, 68) !default;
 $light-inactive-grey: rgba(255, 255, 255, 0.7);
 $light-active-grey: rgba(255, 255, 255, 1);
 
+$button-color-raised: #ffffff;
+$button-floating-size: 37px !default;
+$button-color: $secondary-color !default;
+$button-color-disabled: #9F9F9F !default;
+$button-large-icon-font-size: 1.6rem !default;
 
 
 

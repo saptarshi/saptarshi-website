@@ -8,6 +8,10 @@ $(window).load(function(){
 
   //Initialize headers
   countHeaders();
+
+  $('.fixed-action-btn').on('click', function(e) {
+    $(this).toggleClass('active');
+  });
 });
 
 // Returns a function, that, as long as it continues to be invoked, will not
@@ -46,14 +50,13 @@ function countHeaders() {
     var $headers = $('.js-header'),
         $window = $(window),
         $document = $(document),
-        sticked = [],
         window_height = $window.height(),
         scroll_top = $window.scrollTop(),
         document_height = $document.height(),
         dwh = document_height - window_height,
-        extra = (scroll_top > dwh) ? dwh - scroll_top : 0;
+        extra = (scroll_top > dwh) ? dwh - scroll_top : 0,
+        header_scroll_pos = [];
 
-    var header_scroll_pos = [];
     for(var i = 0; i< $headers.length; i++) {
       element_top = $($headers[i]).parent().offset().top,
       header_scroll_pos.push(element_top - extra);
@@ -61,6 +64,7 @@ function countHeaders() {
     globals_not['header_scroll_pos'] = header_scroll_pos;
     globals_not['headers'] = $headers;
 }
+
 var fixHeader = debounce(function() {
     var current_scroll = $(window).scrollTop(),
         q_pos = findQPosition(current_scroll, globals_not.header_scroll_pos);
