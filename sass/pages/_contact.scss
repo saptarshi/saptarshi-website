@@ -1,0 +1,39 @@
+.contact-wrapper {
+
+  @include breakpoint($breakpoint-small) {
+    @include span(8);
+    margin-left: span(2 of 12) + gutter(12);
+  }
+
+  @include breakpoint($breakpoint-medium) {
+    @include span(6);
+    margin-left: span(3 of 12) + gutter(12);
+  }
+
+  @include breakpoint($breakpoint-large) {
+    @include span(4);
+    margin-left: span(4 of 12) + gutter(12);
+  }
+}
+.contacts {
+  li {
+    // overflow: hidden;
+    a {
+      color: $text-color;
+      padding: .2em 0;
+      display: inline-block;
+
+      .material-icons {
+        margin-right: .3em;
+        vertical-align: bottom;
+      }
+    }
+
+    &.social {
+      a {
+        color: $brand-color;
+        padding-top: 1em;
+      }
+    }
+  }
+}

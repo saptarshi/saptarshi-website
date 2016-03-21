@@ -70,6 +70,9 @@ $breakpoints: (
   'large': (min-width: 1024px),
 ) !default;
 
+$breakpoint-small: 500px;
+$breakpoint-medium: 700px;
+$breakpoint-large: 1400px;
 
 
 $bottom-nav-height: 56px;

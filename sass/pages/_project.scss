@@ -1,0 +1,12 @@
+.project-wrapper {
+  
+  @include breakpoint($breakpoint-medium) {
+    @include span(10);
+    margin-left: span(1 of 12) + gutter(12);
+  }
+
+  @include breakpoint($breakpoint-large) {
+    @include span(6);
+    margin-left: span(3 of 12) + gutter(12);
+  }
+}

@@ -1,7 +1,9 @@
 @import "susy";
+@import "breakpoint";
+
 $susy: (
   columns: 12,
-  gutters: 1/4,
+  gutters: 1,
   math: fluid,
   output: float,
 );
@@ -11,11 +13,33 @@ $susy: (
   height: span(6 of 12);
   margin-left: span(3 of 12) + gutter(12);
   border-radius: 50%;
+
+  @include breakpoint($breakpoint-medium) {
+    width: span(4 of 12);
+    height: span(4 of 12);
+    margin-left: span(4 of 12) + gutter(12);
+  }
+  @include breakpoint($breakpoint-large) {
+    width: span(2 of 12);
+    height: span(2 of 12);
+    margin-left: span(5 of 12) + gutter(12);
+  }
+
 }
 
 .skills {
+  @include container;
+
   h4 {
     font-weight: 700;
+  }
+  &>li {
+    @include breakpoint($breakpoint-medium) {
+      @include span(4 of 12);
+      &:last-child {
+        @include span(4 of 12 last);
+      }
+    }
   }
 }
 
@@ -30,6 +54,18 @@ $susy: (
      -moz-column-rule: 1px dotted #ddd;
           column-rule: 1px dotted #ddd;
   column-gap: span(2 of 12);
+
+  @include breakpoint($breakpoint-medium) {
+    -webkit-column-count: 3;
+       -moz-column-count: 3;
+            column-count: 3;
+  }
+
+  @include breakpoint($breakpoint-large) {
+    -webkit-column-count: 4;
+       -moz-column-count: 4;
+            column-count: 4;
+  }
 }
 
 .floating-header {
@@ -109,5 +145,12 @@ header {
   }
   .marks {
     @include text-size-2(italic, initial, 400);
+  }
+}
+
+.resume-wrapper {
+  @include breakpoint($breakpoint-large) {
+    max-width: 1200px;
+    margin:auto;
   }
 }
