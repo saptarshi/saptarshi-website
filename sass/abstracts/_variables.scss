@@ -26,6 +26,7 @@ $text-color: rgb(34, 34, 34) !default;
 /// Main brand color
 /// @type Color
 $brand-color: rgb(229, 0, 80) !default;
+$primary-color: $brand-color !default;
 $secondary-color: #F44336 !default;
 
 /// Light grey

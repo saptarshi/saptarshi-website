@@ -2,3 +2,20 @@
 // When having several themes, this file contains everything related to the
 // default one.
 // -----------------------------------------------------------------------------
+@media print {
+  nav,
+  header,
+  footer,
+  img,
+  .fixed-action-btn {
+    display: none;
+  }
+  @page {
+    margin: 2cm;
+  }
+
+  body{
+    font-size: 12px;
+    line-height: 1.4;
+  }
+}

@@ -1,3 +1,11 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the footer of the site/application.
 // -----------------------------------------------------------------------------
+footer {
+  padding-top: 5em;
+  text-align: center;
+  @include clearfix;
+  .copyright {
+    @include text-size--1(italic, initial);
+  }
+}

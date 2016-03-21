@@ -1,21 +1,41 @@
 // -----------------------------------------------------------------------------
 // This file contains styles that are specific to the home page.
 // -----------------------------------------------------------------------------
-// .home-bg {
-//   position: relative;
-//   overflow: hidden;
-//   width: 100%;
-//   height: 100vh;
-//
-//   .full-bg-img {
-//     position: absolute;
-//     top: 0;
-//     right: 0;
-//     bottom: 0;
-//     min-width: 100%;
-//     min-height: 100%;
-//     left: 50%;
-//     transform: translateX(-50%);
-//     overflow-x: hidden;
-//   }
-// }
+@import "susy";
+
+$susy: (
+  columns: 12,
+  gutters: 1/4,
+  math: fluid,
+  output: float,
+);
+
+.work {
+  ul {
+    @include container;
+    @include clearfix;
+    overflow: hidden;
+  }
+
+  a {
+      color: #ffffff;
+      padding: 1em;
+      display: inline-block;
+  }
+
+  li {
+      background: $dark-grey;
+      margin-bottom: 1em;
+      will-change: transition;
+      -webkit-transition: background-color 0.23s cubic-bezier(0.65, 0.05, 0.36, 1);
+      -moz-transition: background-color 0.23s cubic-bezier(0.65, 0.05, 0.36, 1);
+      transition: background-color 0.23s cubic-bezier(0.65, 0.05, 0.36, 1);
+
+      @include span(12 of 12);
+
+
+      &:hover {
+        background: $primary-color;
+      }
+  }
+}

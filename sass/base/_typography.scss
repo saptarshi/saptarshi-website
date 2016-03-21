@@ -64,3 +64,10 @@ p {
   font-style: $font-style;
   text-transform: $text-transform;
 }
+
+@mixin text-size--1 ($font-style, $text-transform:initial, $font-weight:normal) {
+  font-size: ms(-.5);
+  font-weight: $font-weight;
+  font-style: $font-style;
+  text-transform: $text-transform;
+}
