@@ -27,7 +27,8 @@ $susy: (
 
 }
 
-.skills {
+.skills,
+.interests {
   @include container;
 
   h4 {
@@ -118,6 +119,10 @@ header {
     li > dl > dt,
     li > dl > dd {
       text-align: center;
+
+      @include breakpoint($breakpoint-medium) {
+        text-align: left;
+      }
     }
 
     .role-wrapper {
@@ -148,9 +153,52 @@ header {
   }
 }
 
-.resume-wrapper {
+.skills,
+.technologies,
+.organizations,
+.education,
+.interests {
+  padding-bottom: ms(0.5);
+  padding-top: ms(0.5);
+  border-bottom: 1px solid $light-grey;
+}
+.section-wrapper {
+  @include container;
+  @include clearfix;
   @include breakpoint($breakpoint-large) {
-    max-width: 1200px;
-    margin:auto;
+    // max-width: 1200px;
+    // margin:auto;
   }
+
+  @include breakpoint($breakpoint-medium) {
+    h3 {
+      @include span(2 of 12);
+      margin: 0;
+      padding-top: 0.5em;
+      text-align: left;
+    }
+
+    h6 {
+      text-align: left;
+    }
+
+    .skills,
+    .technologies,
+    .organizations,
+    .education,
+    .interests
+     {
+      @include span(10 of 12 last);
+    }
+  }
+}
+
+header {
+  @include breakpoint($breakpoint-medium) {
+    @include span(last 10 of 12);
+  }
+}
+
+.projects li {
+  margin-bottom: 2.5em;
 }
