@@ -84,6 +84,10 @@ $susy: (
   -moz-transition: opacity 200ms ease-in-out;
   -webkit-transition: opacity 200ms ease-in-out;
 
+  @include breakpoint($breakpoint-medium) {
+    display: none;
+  }
+
   &.appear {
     opacity: 0.95;
     @extend .z-depth-2;

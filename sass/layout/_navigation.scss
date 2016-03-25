@@ -1,5 +1,6 @@
 @charset 'UTF-8';
 @import "susy";
+@import "breakpoint";
 
 $susy: (
   columns: 12,
@@ -22,24 +23,52 @@ $susy: (
   @extend .z-depth-2;
   @include container;
 
+  @include breakpoint($breakpoint-large) {
+    top:0;
+    height: 100%;
+    width: $sidebar-width-large;
+    background-color: $light-grey;
+  }
+
   &.headroom--pinned {
     transform: translateY(0%);
+    @include breakpoint($breakpoint-large) {
+      transform: initial;
+    }
   }
 
   &.headroom--unpinned {
     transform: translateY(100%);
+    @include breakpoint($breakpoint-large) {
+      transform: initial;
+    }
   }
 
   ul {
     padding: 0;
     margin: 0;
+
+    @include breakpoint($breakpoint-large) {
+      top: 50%;
+      margin-top: -198px;
+      position: relative;
+      overflow: hidden;
+    }
+
   }
   li {
     list-style: none;
     @include span(3);
 
+    @include breakpoint($breakpoint-large) {
+      @include span(12);
+    }
+
     &:last-child {
       @include span(3 last);
+      @include breakpoint($breakpoint-large) {
+        @include span(12);
+      }
     }
     a {
       @include clearfix;
@@ -49,8 +78,19 @@ $susy: (
       display: inline-block;
       color: $light-inactive-grey;
 
+      cursor: pointer;
+      @include breakpoint($breakpoint-large) {
+        color: lighten($text-color, 40%);
+        border-bottom: 1px solid $light-inactive-grey;
+        padding-top: 1.2em;
+        padding-bottom: 1.2em;
+      }
+
       &.active {
         color: $light-active-grey;
+        @include breakpoint($breakpoint-large) {
+          color: $text-color;
+        }
       }
     }
     i {
@@ -63,6 +103,9 @@ $susy: (
       display: inline-block;
       width: 100%;
       text-align: center;
+      @include breakpoint($breakpoint-large) {
+        @include text-size-2(normal, uppercase)
+      }
     }
   }
 }
