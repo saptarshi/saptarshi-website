@@ -7,6 +7,7 @@ $(window).load(function(){
   headroom.init();
 
   //Initialize headers
+
   countHeaders();
 
   $('.fixed-action-btn').on('click', function(e) {
@@ -47,6 +48,7 @@ function findQPosition(member, array) {
 
 
 function countHeaders() {
+  if($('.floating-header').css('display') !== 'none') {
     var $headers = $('.js-header'),
         $window = $(window),
         $document = $(document),
@@ -63,6 +65,7 @@ function countHeaders() {
     }
     globals_not['header_scroll_pos'] = header_scroll_pos;
     globals_not['headers'] = $headers;
+  }
 }
 
 var fixHeader = debounce(function() {
@@ -77,6 +80,9 @@ var fixHeader = debounce(function() {
     } else {
       $('.floating-header').removeClass('appear');
     }
-}, 250);
+}, 100);
 
 $(window).on('scroll', fixHeader);
+$(window).on('resize', function() {
+  countHeaders();
+});
