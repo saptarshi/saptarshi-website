@@ -13,6 +13,11 @@ $(window).load(function(){
   $('.fixed-action-btn').on('click', function(e) {
     $(this).toggleClass('active');
   });
+
+  console.log('You can fork this code at https://github.com/saptarshi/saptarshi.github.io.git');
+  console.log('Want to hire me? Call me at +1-424-337-3395');
+  console.log('Or mail me at mail@saptarshichakraborty.me');
+
 });
 
 // Returns a function, that, as long as it continues to be invoked, will not

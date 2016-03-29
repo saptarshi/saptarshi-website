@@ -112,3 +112,24 @@ $gallery-grid: (
       }
   }
 }
+
+.hero-links {
+  margin: 0 auto;
+  max-width: 15em;
+  a {
+    display: inline-block;
+    padding: 1em;
+    color: $dark-grey;
+    text-decoration: none;
+    will-change: transform;
+    transition: transform 200ms linear;
+    transform: translateY(0%);
+
+    &:hover {
+      transform: translateY(-7%);
+    }
+    &:first-child {
+      margin-right: 2em;
+    }
+  }
+}
